@@ -1,5 +1,4 @@
-FROM alpine:3.5
-
+FROM alpine:latest
 # get sprout proving keys
 RUN apk add --update \
 	bash \
