@@ -10,7 +10,7 @@ RUN apk add --update \
 ENV HOME /verus-cli
 COPY ./verus-cli ./verus-cli
 WORKDIR /verus-cli
-RUN ./fetch-params.sh
+RUN chmod -x ./fetch-params.sh && ./fetch-params.sh
 
 
 
