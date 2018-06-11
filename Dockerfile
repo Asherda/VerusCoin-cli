@@ -9,6 +9,7 @@ RUN apk add --update \
 ENV HOME /verus-cli
 COPY ./verus-cli ./verus-cli
 WORKDIR /verus-cli
+VOLUME ["/verus-cli/"]
 RUN chmod u+x ./fetch-params.sh; sync; ./fetch-params.sh
 
 
