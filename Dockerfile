@@ -29,10 +29,8 @@ RUN set -x \
     wget \
     zlib-dev
 
-WORKDIR /veruscoin
-
+WORKDIR /veruscoin/data
 USER veruscoin
 
-ENTRYPOINT ["/usr/local/bin/veruscoin"]
 CMD ["--help"]
 
