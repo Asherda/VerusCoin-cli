@@ -1,16 +1,38 @@
 FROM alpine:latest
-# get sprout proving keys
-RUN apk add --update \
-	bash \
-	wget \
-	ca-certificates \
-	&& rm -rf /var/cache/apk/*
 
-ENV HOME /verus-cli
-COPY ./verus-cli ./verus-cli
-WORKDIR /verus-cli
-VOLUME ["/verus-cli/"]
-RUN chmod u+x ./fetch-params.sh; sync; ./fetch-params.sh
+RUN addgroup -S veruscoin && adduser -S -G veruscoin veruscoin \
+  && mkdir -p /veruscoin/data \
+  && chown veruscoin:veruscoin /veruscoin/data
 
+VOLUME /veruscoin/data
 
+RUN set -x \
+  && apk add --no-cache --virtual .build-deps \
+    autoconf \
+    automake \
+    boost-dev \
+    build-base \
+    chrpath \
+    curl \
+    file \
+    git \
+    libtool \
+    linux-headers \
+    m4 \
+    musl-dev \
+    ncurses-dev \
+    openssl \
+    openssl-dev \
+    pkgconfig \
+    tar \
+    unzip \
+    wget \
+    zlib-dev
+
+WORKDIR /veruscoin
+
+USER veruscoin
+
+ENTRYPOINT ["/usr/local/bin/veruscoin"]
+CMD ["--help"]
 
