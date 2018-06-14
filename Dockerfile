@@ -11,23 +11,24 @@ RUN set -x \
     autoconf \
     automake \
     boost-dev \
-    build-base \
-    chrpath \
+    bsdmainutils \
+    build-essential \
     curl \
-    file \
     git \
+    g++-multilib \
     libtool \
+    libc6-dev \
+    libcurl4-openssl-dev \
     linux-headers \
     m4 \
-    musl-dev \
     ncurses-dev \
-    openssl \
-    openssl-dev \
-    pkgconfig \
+    pkg-config \
+    python \
+    python-zmq \
     tar \
     unzip \
     wget \
-    zlib-dev
+    zlib1g-dev
 
 WORKDIR /veruscoin/data
 USER veruscoin
