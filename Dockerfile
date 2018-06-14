@@ -11,8 +11,10 @@ RUN set -x \
     autoconf \
     automake \
     boost-dev \
+    boost \
+    boost-program_options \
+    libgomp \
     build-base \
-    cargo \
     chrpath \
     curl \
     file \
