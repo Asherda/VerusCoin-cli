@@ -12,7 +12,7 @@ RUN set -x \
     automake \
     boost-dev \
     bsdmainutils \
-    build-essential \
+    build-base \
     curl \
     git \
     g++-multilib \
