@@ -7,7 +7,7 @@ RUN addgroup -S veruscoin && adduser -S -G veruscoin veruscoin \
 VOLUME /veruscoin/data
 
 RUN set -x \
-  && apk add --no-cache --virtual .build-deps \
+  && apk add --no-cache \
     autoconf \
     automake \
     boost-dev \
