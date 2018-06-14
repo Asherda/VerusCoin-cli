@@ -15,6 +15,7 @@ RUN set -x \
     boost-program_options \
     libgomp \
     build-base \
+    cargo \
     chrpath \
     curl \
     file \
